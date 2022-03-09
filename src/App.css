@@ -1,19 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
-body{
-  padding: 0;
+* {
+  box-sizing: border-box;
+  border: 0;
+}
+body {
   margin: 0;
+  padding: 0;
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
 }
 
-.flex{
+.flex {
   display: flex;
   align-items: center;
 }
 
-.header{
+.header {
   background-color: aquamarine;
   justify-content: space-between;
   box-shadow: 0 4px 10px rgb(0 0 0 / 30%);
+}
+
+.img-container {
+  margin: 0px 0px 0px 80px;
+}
+
+.author{
+  margin: 0px 80px 0px 0px;
+}
+
+.article {
+  height: 130px;
+  max-width: 48%;
+  padding: 20px;
+  background-color: #203047;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.inspirations{
+  justify-content: space-around;
+}
+
+.author-name{
+  font-size: 600;
+}
+
+.greetings{
+  font-size: 11px;
 }

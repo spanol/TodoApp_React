@@ -1,7 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export function Tasks() {
-  const [task, setTask] = useState([]);
+  const [task, setTask] = useState(() => {
+    const getStoredTask = localStorage.getItem("tasks");
+    if (getStoredTask) {
+      return JSON.parse(getStoredTask);
+    } else {
+      return [];
+    }
+  });
   const [inputTask, setInputTask] = useState("");
 
   const addTodo = (e) => {
@@ -29,43 +36,45 @@ export function Tasks() {
   const completedTask = (index) => {
     setTask((prevTask) =>
       prevTask.map((listedTask, listedTaskIndex) =>
-        listedTaskIndex == index
+        listedTaskIndex === index
           ? { ...listedTask, isCompleted: listedTask.isCompleted }
           : listedTask
       )
     );
   };
 
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(task));
+  }, [task]);
+
   return (
     <div>
       <h1>Tasks</h1>
       <form onSubmit={addTodo}>
-        <input type="text" 
-        value={inputTask}
-        onChange={(e)=> setInputTask(e.target.value)}
-        placeholder="Task" />
-        <button onclick={addTodo}>Submit Task</button>
+        <input
+          type="text"
+          value={inputTask}
+          onChange={(e) => setInputTask(e.target.value)}
+          placeholder="Task"
+        />
+        <button onClick={addTodo}>Submit Task</button>
       </form>
 
       <div>
-        {task.map(({content, createdAt,
-        isCompleted},index) =>(
+        {task.map(({ content, createdAt, isCompleted }, index) => (
           <div className="wrapper">
             <div className="content">
-              <div className=" todo"> 
-              {content}
+              <div className=" todo" onClick={completedTask}>
+                {content}
               </div>
 
-              <div>
-                Created at:{createdAt}
-              </div>
+              <div>Created at:{createdAt}</div>
 
-              <div onclick={()=> deleteTask(index)}>
-                Delete
-              </div>
+              <div>Is completed: {isCompleted ? "True" : "False"}</div>
 
-              </div>
+              <div onClick={() => deleteTask(index)}>Delete</div>
             </div>
+          </div>
         ))}
       </div>
     </div>

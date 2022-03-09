@@ -1,16 +1,20 @@
 import React from "react";
+import {Logo} from "../Components/Logo"
 export function Header(){
 return (
-    <header className='flex header' >
-        <div>
-        <h1>Logo</h1>
-        </div>
+    <header>
+      <nav  className='flex header' >
+          <Logo/>
+        <div className='flex author'>
+          {/* img */}
+          
+          <div >
+          <p className="author-name">Vinicius Spanol</p>
+          <p className="greetings">Boas vindas ao meu app!</p>
+          </div>
 
-        <div className='flex'>
-          {/* flex p ajustar img */}
-          <span>Vinicius Spanol</span>
-          <p>Boas vindas ao meu app!</p>
         </div>
+        </nav>
       </header>
 );
 }
