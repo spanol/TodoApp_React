@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export function Tasks() {
-  const [task, setTask] = useState({});
+  const [task, setTask] = useState([]);
   const [inputTask, setInputTask] = useState("");
 
   const addTodo = (e) => {
@@ -11,24 +11,24 @@ export function Tasks() {
     }
     const newTodo = {
       content: inputTask,
-      createdAd: new Date().toLocaleDateString(),
+      createdAt: new Date().toLocaleDateString(),
       isCompleted: false,
     };
-    setTask((prevList) => [newTodo, ...prevList]);
+    setTask((prevTask) => [newTodo, ...prevTask]);
     setInputTask("");
   };
 
   const deleteTask = (index) => {
-    setTask((prevList) =>
-      prevList.filter(
+    setTask((prevTask) =>
+      prevTask.filter(
         (listedTask, listedTaskIndex) => listedTaskIndex !== index
       )
     );
   };
 
   const completedTask = (index) => {
-    setTask((prevList) =>
-      prevList.map((listedTask, listedTaskIndex) =>
+    setTask((prevTask) =>
+      prevTask.map((listedTask, listedTaskIndex) =>
         listedTaskIndex == index
           ? { ...listedTask, isCompleted: listedTask.isCompleted }
           : listedTask
@@ -39,10 +39,35 @@ export function Tasks() {
   return (
     <div>
       <h1>Tasks</h1>
-      <form onSubmit={}>
-        <input type="text" placeholder="Task" />
-        <button>Submit Task</button>
+      <form onSubmit={addTodo}>
+        <input type="text" 
+        value={inputTask}
+        onChange={(e)=> setInputTask(e.target.value)}
+        placeholder="Task" />
+        <button onclick={addTodo}>Submit Task</button>
       </form>
+
+      <div>
+        {task.map(({content, createdAt,
+        isCompleted},index) =>(
+          <div className="wrapper">
+            <div className="content">
+              <div className=" todo"> 
+              {content}
+              </div>
+
+              <div>
+                Created at:{createdAt}
+              </div>
+
+              <div onclick={()=> deleteTask(index)}>
+                Delete
+              </div>
+
+              </div>
+            </div>
+        ))}
+      </div>
     </div>
   );
 }
