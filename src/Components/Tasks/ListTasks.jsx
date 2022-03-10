@@ -3,7 +3,7 @@ import React from "react";
 export function ListTasks({ task, completedTask, deleteTask }) {
   return (
     <div className="container listtasks">
-      {task.map(({ content, createdAt, isCompleted }, index) => (
+      {task.map(({ content, createdAt, isCompleted, priority }, index) => (
         <div className="content">
           <div className=" todo">
             <strong>{content}</strong>
@@ -13,7 +13,7 @@ export function ListTasks({ task, completedTask, deleteTask }) {
 
           <div>Is completed: {isCompleted ? "True" : "False"}</div>
 
-          <div>Priority: </div>
+          <div>Priority:  {priority} </div>
 
           <div className="button-container">
             <button className="taskbutton delete" onClick={() => deleteTask(index)}>Delete</button>

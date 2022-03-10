@@ -1,6 +1,21 @@
 import React from "react";
 
 export function CreateTasks({ addTodo, inputTask, setInputTask, priority, setPriority }) {
+  const options = [
+    {
+      label: "Asap",
+      value: "Asap"
+    },{
+      label: "cool",
+      value: "cool"
+    },{
+      label: "danger",
+      value: "danger"
+    }
+  ]
+
+
+  
   return (
     <div className="container">
       <h1>Tasks</h1>
@@ -14,11 +29,11 @@ export function CreateTasks({ addTodo, inputTask, setInputTask, priority, setPri
         />
 
         <label>Select a priority</label>
-        <select id="priorities " name="priorities">
-          <option value={priority}>asap</option>
-          <option value={priority}>cool</option>
-          <option value={priority}>go on </option>
-        </select>
+        <select id="priorities"  value={priority} onChange={(e) => setPriority(e.target.value)}  name="priorities">
+          {options.map((options) =>(
+          <option value={options.value}>{options.label}</option>
+          ))}
+          </select>
 
         <button onClick={addTodo} className="taskbutton">
           Submit Task
@@ -27,3 +42,4 @@ export function CreateTasks({ addTodo, inputTask, setInputTask, priority, setPri
     </div>
   );
 }
+

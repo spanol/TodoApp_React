@@ -5,6 +5,10 @@ return (
     <header>
       <nav  className='flex header' >
           <Logo/>
+
+
+        <input type="text" placeholder="Find task"/>
+
         <div className='flex author'>
           {/* img */}
           

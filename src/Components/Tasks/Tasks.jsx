@@ -48,9 +48,14 @@ export function Tasks() {
     );
   };
 
+  const completeTask = () => {
+    
+  }
+
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(task));
   }, [task]);
+
 
   return (
     // <div className="container">
@@ -59,12 +64,15 @@ export function Tasks() {
         addTodo={addTodo}
         inputTask={inputTask}
         setInputTask={setInputTask}
+        priority={priority}
+        setPriority={setPriority}
       />
 
       <ListTasks
         task={task}
         completedTask={completedTask}
         deleteTask={deleteTask}
+        priority={priority}
       />
     </>
     // </div>
