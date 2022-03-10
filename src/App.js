@@ -1,20 +1,20 @@
-import React, {useState,useEffect} from 'react';
+import React from "react";
 
-
-import './App.css';
-import { Header } from './Components/Header';
-import { Inspirations } from './Components/Inspiration';
-import { Tasks } from './Components/Tasks';
+import "./App.css";
+import { Footer } from "./Components/Footer";
+import { Header } from "./Components/Header/Header";
+import { Inspirations } from "./Components/Inspiration";
+import { Tasks } from "./Components/Tasks/Tasks";
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      
+      <Header />
       <main>
-      <Inspirations/>
-      <Tasks/>
+        <Inspirations />
+        <Tasks />
       </main>
+      <Footer />
     </div>
   );
 }

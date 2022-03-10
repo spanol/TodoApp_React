@@ -1,15 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 * {
   box-sizing: border-box;
   border: 0;
+  font-family: 'Roboto', sans-serif;
 }
+
+textarea:focus, input:focus {
+  color: #ff0000;
+}
+
+input, select, textarea{
+  color: #000;
+}
+
+button, a{
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
+  background-color: #e7e7e7;
 }
 
 .flex {
@@ -17,10 +31,21 @@ body {
   align-items: center;
 }
 
+.footer{
+  justify-content: space-ar;
+  background-color: aquamarine;
+  height: 70px;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 30%);
+}
+
 .header {
   background-color: aquamarine;
   justify-content: space-between;
   box-shadow: 0 4px 10px rgb(0 0 0 / 30%);
+}
+
+.container{
+  margin-left: 15px;
 }
 
 .img-container {
@@ -38,6 +63,7 @@ body {
   background-color: #203047;
   border-radius: 10px;
   color: #fff;
+  justify-content: center;
 }
 
 .inspirations{
@@ -50,4 +76,52 @@ body {
 
 .greetings{
   font-size: 11px;
+}
+
+.form{
+  justify-content: space-around;
+}
+
+.inputtask{
+  width: calc(100% - 170px);
+  /* flex: 1 1; */
+  height: 30px;
+}
+
+.button-container{
+}
+
+
+.taskbutton{
+  height: 30px;
+  margin: 0px 0px 0px 10px ;
+  background-color: aquamarine ;
+  border-radius: 3px;
+}
+
+.listtasks{
+  margin: 0px 0px 0px 10px;
+}
+
+.content{
+  margin: 20px;
+  height: 130px;
+  max-width: 48%;
+  padding: 20px;
+  background-color: #203047;
+  border-radius: 10px;
+  color: #fff;
+  justify-content: center;
+}
+
+.delete{
+  background-color: red;
+}
+
+.complete{
+  background-color: green;
+}
+
+.edit{
+  background-color: yellow;
 }

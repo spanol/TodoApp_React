@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
 
+import { ListTasks } from "./ListTasks";
+import { CreateTasks } from "./CreateTasks";
+
 export function Tasks() {
   const [task, setTask] = useState(() => {
-    const getStoredTask = localStorage.getItem("tasks");
-    if (getStoredTask) {
-      return JSON.parse(getStoredTask);
+    const getStoredTasks = localStorage.getItem("tasks");
+    if (getStoredTasks) {
+      return JSON.parse(getStoredTasks);
     } else {
       return [];
     }
   });
   const [inputTask, setInputTask] = useState("");
+  const [priority, setPriority] = useState("");
 
   const addTodo = (e) => {
     e.preventDefault();
@@ -20,6 +24,7 @@ export function Tasks() {
       content: inputTask,
       createdAt: new Date().toLocaleDateString(),
       isCompleted: false,
+      priority: priority,
     };
     setTask((prevTask) => [newTodo, ...prevTask]);
     setInputTask("");
@@ -48,35 +53,20 @@ export function Tasks() {
   }, [task]);
 
   return (
-    <div>
-      <h1>Tasks</h1>
-      <form onSubmit={addTodo}>
-        <input
-          type="text"
-          value={inputTask}
-          onChange={(e) => setInputTask(e.target.value)}
-          placeholder="Task"
-        />
-        <button onClick={addTodo}>Submit Task</button>
-      </form>
+    // <div className="container">
+    <>
+      <CreateTasks
+        addTodo={addTodo}
+        inputTask={inputTask}
+        setInputTask={setInputTask}
+      />
 
-      <div>
-        {task.map(({ content, createdAt, isCompleted }, index) => (
-          <div className="wrapper">
-            <div className="content">
-              <div className=" todo" onClick={completedTask}>
-                {content}
-              </div>
-
-              <div>Created at:{createdAt}</div>
-
-              <div>Is completed: {isCompleted ? "True" : "False"}</div>
-
-              <div onClick={() => deleteTask(index)}>Delete</div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+      <ListTasks
+        task={task}
+        completedTask={completedTask}
+        deleteTask={deleteTask}
+      />
+    </>
+    // </div>
   );
 }
