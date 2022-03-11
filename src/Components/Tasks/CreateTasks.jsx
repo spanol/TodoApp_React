@@ -5,10 +5,12 @@ export function CreateTasks({ addTodo, inputTask, setInputTask, priority, setPri
     {
       label: "Asap",
       value: "Asap"
-    },{
+    },
+    {
       label: "cool",
       value: "cool"
-    },{
+    },
+    {
       label: "danger",
       value: "danger"
     }
@@ -28,8 +30,9 @@ export function CreateTasks({ addTodo, inputTask, setInputTask, priority, setPri
           placeholder="Task"
         />
 
+        
         <label>Select a priority</label>
-        <select id="priorities"  value={priority} onChange={(e) => setPriority(e.target.value)}  name="priorities">
+        <select placeholder={priority} className="select-task"  value={priority} onChange={(e) => setPriority(e.target.value)}  name="priorities">
           {options.map((options) =>(
           <option value={options.value}>{options.label}</option>
           ))}

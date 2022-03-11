@@ -1,18 +1,17 @@
 import React from "react";
 
 export function Inspirations() {
+  const Inspiration = {
+    author: "ShakeSpeare",
+    text: '"aa"',
+  };
   return (
     <div className="container">
       <h1>To inspire you</h1>
       <div className="flex inspirations">
         <div className="article">
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit,
-            doloribus. Obcaecati eaque fugiat reprehenderit qui quam aperiam
-            repudiandae quis maxime libero assumenda recusandae, at quos nobis
-            possimus autem rem? Tempora.
-          </p>
-          <p>Author name</p>
+          <p>{Inspiration.text}</p>
+          <p>{Inspiration.author}</p>
         </div>
 
         <div className="article">

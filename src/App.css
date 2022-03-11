@@ -1,19 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 * {
   box-sizing: border-box;
-  border: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-textarea:focus, input:focus {
+input {
+  height: 30px;
+}
+
+textarea:focus,
+input:focus {
   color: #ff0000;
 }
 
-input, select, textarea{
+input,
+select,
+textarea {
   color: #000;
 }
 
-button, a{
+button,
+a {
+  border: 0;
   cursor: pointer;
 }
 
@@ -31,7 +39,11 @@ body {
   align-items: center;
 }
 
-.footer{
+.absolute {
+  position: absolute;
+}
+
+.footer {
   justify-content: space-ar;
   background-color: aquamarine;
   height: 70px;
@@ -44,7 +56,7 @@ body {
   box-shadow: 0 4px 10px rgb(0 0 0 / 30%);
 }
 
-.container{
+.container {
   margin-left: 15px;
 }
 
@@ -52,12 +64,11 @@ body {
   margin: 0px 0px 0px 80px;
 }
 
-.author{
+.author {
   margin: 0px 80px 0px 0px;
 }
 
 .article {
-  height: 130px;
   max-width: 48%;
   padding: 20px;
   background-color: #203047;
@@ -66,44 +77,54 @@ body {
   justify-content: center;
 }
 
-.inspirations{
+.inspirations {
   justify-content: space-around;
 }
 
-.author-name{
+.author-image {
+  width: 44px;
+  height: 44px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.author-name {
   font-size: 600;
 }
 
-.greetings{
+.author-greetings {
   font-size: 11px;
 }
 
-.form{
+.form {
   justify-content: space-around;
 }
 
-.inputtask{
-  width: calc(100% - 170px);
-  /* flex: 1 1; */
+.inputtask {
+  width: calc(100% - 250px);
   height: 30px;
 }
 
-.button-container{
+.select-task {
+  height: 30px;
 }
 
+.button-container {
+  margin-left: -10px;
+}
 
-.taskbutton{
+.taskbutton {
   height: 30px;
-  margin: 0px 0px 0px 10px ;
-  background-color: aquamarine ;
+  margin: 0px 0px 0px 10px;
+  background-color: aquamarine;
   border-radius: 3px;
 }
 
-.listtasks{
+.listtasks {
   margin: 0px 0px 0px 10px;
 }
 
-.content{
+.content {
   margin: 20px;
   height: 130px;
   max-width: 48%;
@@ -114,14 +135,29 @@ body {
   justify-content: center;
 }
 
-.delete{
+.delete {
   background-color: red;
 }
 
-.complete{
+.complete {
   background-color: green;
 }
 
-.edit{
+.edit {
   background-color: yellow;
+}
+
+.search-input {
+  width: calc(50%);
+}
+
+.search-button {
+  /* left: 946px; */
+  border: none;
+  background: none;
+  /* position: relative; */
+}
+
+.search {
+  object-fit: contain;
 }

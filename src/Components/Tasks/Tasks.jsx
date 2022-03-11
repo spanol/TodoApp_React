@@ -13,7 +13,8 @@ export function Tasks() {
     }
   });
   const [inputTask, setInputTask] = useState("");
-  const [priority, setPriority] = useState("");
+  const [priority, setPriority] = useState("Priority");
+  const [taskStatus, setTaskStatus] = useState(false);
 
   const addTodo = (e) => {
     e.preventDefault();
@@ -23,7 +24,7 @@ export function Tasks() {
     const newTodo = {
       content: inputTask,
       createdAt: new Date().toLocaleDateString(),
-      isCompleted: false,
+      isCompleted: taskStatus,
       priority: priority,
     };
     setTask((prevTask) => [newTodo, ...prevTask]);
@@ -49,16 +50,14 @@ export function Tasks() {
   };
 
   const completeTask = () => {
-    
-  }
+    setTaskStatus(true);
+  };
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(task));
   }, [task]);
 
-
   return (
-    // <div className="container">
     <>
       <CreateTasks
         addTodo={addTodo}
@@ -70,11 +69,10 @@ export function Tasks() {
 
       <ListTasks
         task={task}
-        completedTask={completedTask}
-        deleteTask={deleteTask}
+        completeTask={completeTask}
         priority={priority}
+        deleteTask={deleteTask}
       />
     </>
-    // </div>
   );
 }
