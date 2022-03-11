@@ -1,17 +1,18 @@
 import React from "react";
 import { Logo } from "./Logo";
-export function Header(search, setSearch) {
+import { SearchBar } from "./SearchBar";
+export default function Header({ setSearch }) {
   return (
     <header>
-      <nav className="flex header">
+      <nav className="flex page-container header">
         <Logo />
-
-
-        <input className="search-input" onChange={(e)=> {setSearch(e.target.value)}} type="text" placeholder="Find task" />
-        <button className=" search-button"><img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"/></button>
-        
+        <SearchBar setSearch={setSearch} />
         <div className="flex author">
-          <img src="foto.jpg" className="author-image"  alt="Author"/>
+          <img
+            src="https://avatars.githubusercontent.com/u/85651178?s=400&u=3664e7edc66f924c311bf3551e3cc4b3240340b2&v=4"
+            className="author-image"
+            alt="Author"
+          />
           <div>
             <p className="author-name">Vinicius Spanol</p>
             <p className="author-greetings">Boas vindas ao meu app!</p>

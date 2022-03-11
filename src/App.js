@@ -1,22 +1,18 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
 import "./App.css";
-import { Footer } from "./Components/Footer";
-import { Header } from "./Components/Header/Header";
-import { Inspirations } from "./Components/Inspiration";
-import { Tasks } from "./Components/Tasks/Tasks";
+import Footer from "./Components/Footer/Footer";
+import Header from "./Components/Header/Header";
+import Tasks from "./Components/Tasks/Tasks";
 
 function App() {
-  const [search, setSearch] = useState("")
+  const [search, setSearch] = useState("");
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <Inspirations />
-        <Tasks />
-      </main>
+    <>
+      <Header setSearch={setSearch} />
+        <Tasks search={search} setSearch={setSearch} />
       <Footer />
-    </div>
+    </>
   );
 }
 

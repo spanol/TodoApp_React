@@ -9,13 +9,10 @@ export function ListTasks({
   completeTask,
 }) {
   return (
-    <div className="container listtasks">
-      <div>
-      <input className="search-input" onChange={(e)=> {setSearch(e.target.value)}} type="text" placeholder="Find task" />
-      </div>
+    <div className="container list-tasks">
       {task
         .filter((val) => {
-          if (search == "") {
+          if (search === "") {
             return val;
           } else if (val.content.toLowerCase().includes(search.toLowerCase())) {
             return val;
@@ -23,7 +20,7 @@ export function ListTasks({
         })
         .map(({ content, createdAt, isCompleted, priority }, index) => (
           <div className="content">
-            <span className=" todo">
+            <span className="todo">
               <strong>{content}</strong>
             </span>
 
@@ -35,22 +32,16 @@ export function ListTasks({
 
             <div className="flex button-container">
               <button
-                className="taskbutton delete"
+                className="task-button delete"
                 onClick={() => deleteTask(index)}
               >
                 Delete
               </button>
               <button
-                className="taskbutton complete"
+                className="task-button complete"
                 onClick={() => completedTask(index)}
               >
-                Complete{" "}
-              </button>
-              <button
-                className="taskbutton edit"
-                onClick={() => deleteTask(index)}
-              >
-                edit{" "}
+                Edit task status
               </button>
             </div>
           </div>

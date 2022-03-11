@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ListTasks } from "./ListTasks";
 import { CreateTasks } from "./CreateTasks";
 
-export function Tasks() {
+export default function Tasks({ search, setSearch }) {
   const [task, setTask] = useState(() => {
     const getStoredTasks = localStorage.getItem("tasks");
     if (getStoredTasks) {
@@ -15,7 +15,6 @@ export function Tasks() {
   const [inputTask, setInputTask] = useState("");
   const [priority, setPriority] = useState("Priority");
   const [taskStatus, setTaskStatus] = useState(false);
-  const [search, setSearch] = useState("")
 
   const addTodo = (e) => {
     e.preventDefault();
@@ -23,6 +22,7 @@ export function Tasks() {
       return;
     }
     const newTodo = {
+      id: new Date().getUTCMilliseconds(),
       content: inputTask,
       createdAt: new Date().toLocaleDateString(),
       isCompleted: taskStatus,
@@ -43,15 +43,11 @@ export function Tasks() {
   const completedTask = (index) => {
     setTask((prevTask) =>
       prevTask.map((listedTask, listedTaskIndex) =>
-        listedTaskIndex === index
-          ? { ...listedTask, isCompleted: listedTask.isCompleted }
+        listedTaskIndex == index
+          ? { ...listedTask, isCompleted: !listedTask.isCompleted }
           : listedTask
       )
     );
-  };
-
-  const completeTask = () => {
-    setTaskStatus(true);
   };
 
   useEffect(() => {
@@ -59,23 +55,25 @@ export function Tasks() {
   }, [task]);
 
   return (
-    <>
-      <CreateTasks
-        addTodo={addTodo}
-        inputTask={inputTask}
-        setInputTask={setInputTask}
-        priority={priority}
-        setPriority={setPriority}
-      />
+    <main>
+      <section className="Tasks">
+        <CreateTasks
+          addTodo={addTodo}
+          inputTask={inputTask}
+          setInputTask={setInputTask}
+          priority={priority}
+          setPriority={setPriority}
+        />
 
-      <ListTasks
-        task={task}
-        completeTask={completeTask}
-        priority={priority}
-        deleteTask={deleteTask}
-        search={search}
-        setSearch={setSearch}
-      />
-    </>
+        <ListTasks
+          task={task}
+          completedTask={completedTask}
+          priority={priority}
+          deleteTask={deleteTask}
+          search={search}
+          setSearch={setSearch}
+        />
+      </section>
+    </main>
   );
 }
