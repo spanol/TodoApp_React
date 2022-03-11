@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 
 import "./App.css";
 import { Footer } from "./Components/Footer";
@@ -7,6 +7,7 @@ import { Inspirations } from "./Components/Inspiration";
 import { Tasks } from "./Components/Tasks/Tasks";
 
 function App() {
+  const [search, setSearch] = useState("")
   return (
     <div className="App">
       <Header />

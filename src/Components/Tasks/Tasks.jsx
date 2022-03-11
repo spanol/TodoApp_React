@@ -15,6 +15,7 @@ export function Tasks() {
   const [inputTask, setInputTask] = useState("");
   const [priority, setPriority] = useState("Priority");
   const [taskStatus, setTaskStatus] = useState(false);
+  const [search, setSearch] = useState("")
 
   const addTodo = (e) => {
     e.preventDefault();
@@ -72,6 +73,8 @@ export function Tasks() {
         completeTask={completeTask}
         priority={priority}
         deleteTask={deleteTask}
+        search={search}
+        setSearch={setSearch}
       />
     </>
   );

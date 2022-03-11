@@ -3,6 +3,10 @@ import React from "react";
 export function CreateTasks({ addTodo, inputTask, setInputTask, priority, setPriority }) {
   const options = [
     {
+      label: "Select",
+      value: ""
+    },
+    {
       label: "Asap",
       value: "Asap"
     },
@@ -32,7 +36,7 @@ export function CreateTasks({ addTodo, inputTask, setInputTask, priority, setPri
 
         
         <label>Select a priority</label>
-        <select placeholder={priority} className="select-task"  value={priority} onChange={(e) => setPriority(e.target.value)}  name="priorities">
+        <select className="select-task"  value={priority} onChange={(e) => setPriority(e.target.value)}  name="priorities">
           {options.map((options) =>(
           <option value={options.value}>{options.label}</option>
           ))}
