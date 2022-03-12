@@ -42,7 +42,7 @@ export function ListTasks({
                 className="flex task-button complete"
                 onClick={() => completedTask(index)}
               >
-                Change task status 
+                Complete task
                 <img src="https://img.icons8.com/ios-glyphs/30/000000/checkmark--v1.png"/>
               </button>
             </div>
