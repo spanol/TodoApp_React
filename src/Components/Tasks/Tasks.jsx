@@ -13,7 +13,7 @@ export default function Tasks({ search, setSearch }) {
     }
   });
   const [inputTask, setInputTask] = useState("");
-  const [priority, setPriority] = useState("1");
+  const [priority, setPriority] = useState("");
   const [taskStatus, setTaskStatus] = useState(false);
 
   const addTodo = (e) => {

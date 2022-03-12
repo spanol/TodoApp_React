@@ -109,6 +109,7 @@ body {
 }
 
 .task-button {
+  align-items: center;
   height: 30px;
   margin: 0px 0px 0px 10px;
   background-color: aquamarine;

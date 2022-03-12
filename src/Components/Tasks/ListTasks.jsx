@@ -32,16 +32,18 @@ export function ListTasks({
 
             <div className="flex button-container">
               <button
-                className="task-button delete"
+                className=" flex task-button delete"
                 onClick={() => deleteTask(index)}
               >
                 Delete
+                <img src="https://img.icons8.com/material-outlined/24/000000/trash--v1.png"/>
               </button>
               <button
-                className="task-button complete"
+                className="flex task-button complete"
                 onClick={() => completedTask(index)}
               >
-                Edit task status
+                Change task status 
+                <img src="https://img.icons8.com/ios-glyphs/30/000000/checkmark--v1.png"/>
               </button>
             </div>
           </div>
