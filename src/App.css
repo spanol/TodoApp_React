@@ -4,6 +4,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+main{
+  margin: 20px;
+}
+
 label{
   margin: 0px 10px 0px 10px;
 }
@@ -33,24 +37,27 @@ body {
 }
 
 .page-container{
-  background-color: aquamarine;
+  background-color: rgb(15, 211, 146);
   box-shadow: 0 4px 10px rgb(0 0 0 / 30%);
 }
 
 .footer {
+  min-width: 350px;
   justify-content: center;
   height: 70px;
 }
 
 .socials{
-  margin: 0px 24px 0px 0px
+  margin: 0px 15px 0px 24px
 }
 
 .header {
+  min-width: 350px;
   justify-content: space-between;
 }
 
 .container {
+  min-width: 350px;
   margin: 0px 0px 0px 15px;
 }
 
@@ -107,9 +114,9 @@ body {
   margin: 0px 0px 0px 10px;
 }
 
+
 .content {
-  margin: 20px;
-  height: 130px;
+  margin: 20px auto;
   max-width: 48%;
   padding: 20px;
   background-color: #203047;
@@ -126,8 +133,19 @@ body {
 }
 
 .search-input {
-  margin: 0px 10px 0px 10px;
-  width: calc(50%);
+  width: calc(70%);
+}
+
+.search-div{
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+}
+
+.divisor{
+  width: 700px;
+  margin-top: 20px
 }
 
 .Tasks{
@@ -135,6 +153,9 @@ body {
 }
 
 .search-svg{
-  position: fixed;
-  right: 280px;
+  margin-left: -40px;
+}
+
+.author-message{
+  font-size: 15px;
 }

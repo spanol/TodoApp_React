@@ -4,7 +4,7 @@ export function CreateTasks({ addTodo, inputTask, setInputTask, priority, setPri
   const options = [
     {
       label: "Select",
-      value: ""
+      value: "1"
     },
     {
       label: "1",
@@ -36,14 +36,15 @@ export function CreateTasks({ addTodo, inputTask, setInputTask, priority, setPri
         <label>Select a priority</label>
         <select className="input"  value={priority} onChange={(e) => setPriority(e.target.value)}  name="priorities">
           {options.map((options) =>(
-          <option value={options.value}>{options.label}</option>
-          ))}
+            <option value={options.value}>{options.label}</option>
+            ))}
           </select>
 
         <button onClick={addTodo} className="task-button">
           Submit
         </button>
       </form>
+      <hr className="divisor"/>
     </div>
   );
 }
