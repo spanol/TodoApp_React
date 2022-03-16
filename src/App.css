@@ -97,6 +97,10 @@ body {
   font-size: 11px;
 }
 
+.form-task{
+  justify-content: center;
+}
+
 .input-task {
   width: calc(100% - 280px);
 }

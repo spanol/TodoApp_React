@@ -25,7 +25,7 @@ export function CreateTasks({ addTodo, inputTask, setInputTask, priority, setPri
   return (
     <div className="container">
       <h1>Tasks</h1>
-      <form onSubmit={addTodo} className="flex">
+      <form onSubmit={addTodo} className="flex form-task">
         <input
           className="input-task"
           type="text"
