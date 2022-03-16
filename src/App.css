@@ -45,29 +45,30 @@ body {
   box-shadow: 0 4px 10px rgb(0 0 0 / 30%);
 }
 
-.footer {
-  overflow-x: hidden ;
+.header {
   min-width: 350px;
+  justify-content: space-between;
+}
+
+.footer {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
   justify-content: center;
-  height: 70px;
+  height: 60px;
 }
 
 .socials{
   margin: 0px 15px 0px 24px
 }
 
-.header {
-  min-width: 350px;
-  justify-content: space-between;
-}
 
 .container {
-  min-width: 350px;
   margin: 0px 0px 0px 15px;
 }
 
 .img-container {
-  margin: 0px 0px 0px 80px;
+  margin: 0px 0px 0px 50px;
 }
 
 .author {
@@ -150,7 +151,6 @@ body {
 }
 
 .divisor{
-  width: 700px;
   margin-top: 20px
 }
 

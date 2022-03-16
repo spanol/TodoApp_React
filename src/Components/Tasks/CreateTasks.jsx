@@ -4,19 +4,19 @@ export function CreateTasks({ addTodo, inputTask, setInputTask, priority, setPri
   const options = [
     {
       label: "Select",
-      value: "Not selected"
+      value: "None"
     },
     {
-      label: "1",
-      value: "1"
+      label: "Low",
+      value: "Low"
     },
     {
-      label: "2",
-      value: "2"
+      label: "Medium",
+      value: "Medium"
     },
     {
-      label: "3",
-      value: "3"
+      label: "High",
+      value: "High"
     }
   ]
 

@@ -2,9 +2,7 @@ import React from "react";
 
 export function ListTasks({
   search,
-  setSearch,
   task,
-  completedTask,
   deleteTask,
   completeTask,
 }) {
@@ -26,7 +24,7 @@ export function ListTasks({
 
             <div>Created at: {createdAt} </div>
 
-            <div>Is completed: {isCompleted ? "True" : "False"}</div>
+            <div>Completed: {isCompleted ? "True" : "False"}</div>
 
             <div>Priority: {priority} </div>
 
@@ -40,7 +38,7 @@ export function ListTasks({
               </button>
               <button
                 className="flex task-button complete"
-                onClick={() => completedTask(index)}
+                onClick={() => completeTask(index)}
               >
                 Complete task
                 <img src="https://img.icons8.com/ios-glyphs/30/000000/checkmark--v1.png"/>

@@ -40,7 +40,7 @@ export default function Tasks({ search, setSearch }) {
     );
   };
 
-  const completedTask = (index) => {
+  const completeTask = (index) => {
     setTask((prevTask) =>
       prevTask.map((listedTask, listedTaskIndex) =>
         listedTaskIndex == index
@@ -67,11 +67,10 @@ export default function Tasks({ search, setSearch }) {
 
         <ListTasks
           task={task}
-          completedTask={completedTask}
+          completeTask={completeTask}
           priority={priority}
           deleteTask={deleteTask}
           search={search}
-          setSearch={setSearch}
         />
       </section>
     </main>
