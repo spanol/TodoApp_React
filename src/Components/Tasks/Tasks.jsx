@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-
+import { useSearch } from "../../Context/Context";
 import { ListTasks } from "./ListTasks";
 import { CreateTasks } from "./CreateTasks";
 
-export default function Tasks({ search, setSearch }) {
+export default function Tasks() {
+  const { search } = useSearch();
   const [task, setTask] = useState(() => {
     const getStoredTasks = localStorage.getItem("tasks");
     if (getStoredTasks) {

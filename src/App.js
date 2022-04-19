@@ -1,18 +1,20 @@
-import React, { useState } from "react";
 
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Footer from "./Components/Footer/Footer";
-import Header from "./Components/Header/Header";
-import Tasks from "./Components/Tasks/Tasks";
-
+import ContextProvider from "./Context/Context";
+import Register from "./Pages/Register";
+import Login from "./Pages/Login";
+import Home from "./Pages/Home"
 function App() {
-  const [search, setSearch] = useState("");
   return (
-    <>
-      <Header setSearch={setSearch} />
-        <Tasks search={search} setSearch={setSearch} />
-      <Footer />
-    </>
+    <ContextProvider>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/register" element={<Register />} />
+        <Route exact path="/login" element={<Login />} />
+      </Routes>
+
+    </ContextProvider>
   );
 }
 

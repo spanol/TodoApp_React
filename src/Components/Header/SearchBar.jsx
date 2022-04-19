@@ -1,6 +1,8 @@
 import React from "react";
+import { useSearch } from "../../Context/Context";
 
-export function SearchBar({ setSearch }) {
+export function SearchBar() {
+  const { setSearch } = useSearch()
   return (
     <div className="search-div">
       <input

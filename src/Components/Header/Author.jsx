@@ -1,17 +1,18 @@
 import React from "react";
+import { useAuth } from "../../Context/Context";
 
-export function Author(){
-    return(
-        <div className="flex author">
-          <img
-            src="https://avatars.githubusercontent.com/u/85651178?s=400&u=3664e7edc66f924c311bf3551e3cc4b3240340b2&v=4"
-            className="author-image"
-            alt="Author"
-          />
-          <div className="greetings">
-            <p className="author-name">Vinicius Spanol</p>
-            <p className="author-greetings">Welcome to my app!</p>
-          </div>
-        </div>
-    )
+export function Author() {
+  const { credentialsState, setCredentialsState } = useAuth();
+  const logout = () => {
+    setCredentialsState(null);
+  };
+
+  return (
+    <div className="flex author">
+      <div className="greetings">
+        <p className="author-name">{ credentialsState && credentialsState.username}</p>
+        <p className="author-greetings">Welcome to my app!</p>
+      </div>
+    </div>
+  );
 }

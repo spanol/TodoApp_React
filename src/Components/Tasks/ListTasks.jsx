@@ -34,7 +34,7 @@ export function ListTasks({
                 onClick={() => deleteTask(index)}
               >
                 Delete
-                <img src="https://img.icons8.com/material-outlined/24/000000/trash--v1.png"/>
+                <img src="https://img.icons8.com/material-outlined/24/000000/trash--v1.png" alt="icon"/>
               </button>
               <button
                 className="flex task-button complete"
