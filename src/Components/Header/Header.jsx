@@ -1,5 +1,5 @@
 import React from "react";
-import { Author } from "./Author";
+import { User } from "./User";
 import { Logo } from "./Logo";
 import { SearchBar } from "./SearchBar";
 export default function Header() {
@@ -8,7 +8,7 @@ export default function Header() {
       <nav className="flex page-container header">
         <Logo />
         <SearchBar />
-        <Author/>
+        <User/>
       </nav>
     </header>
   );
