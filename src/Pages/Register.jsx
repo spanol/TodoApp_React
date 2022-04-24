@@ -1,40 +1,38 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+
 import { useAuth } from "../Context/Context";
 import { handleErrors } from "./Login";
+import { RegisterUser } from "../Services/AuthServices";
 
 export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { setCredentialsState } = useAuth();
+  const { authenticated, setAuthenticated } = useAuth();
 
-  const register = (e) => {
+
+  const register = async (e) => {
     e.preventDefault();
-    fetch(`http://localhost:5000/register`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username,
-        password,
-      }),
-    })
-      .then(handleErrors)
-      .then(() => {
-        setCredentialsState({
-          username,
-          password,
-        });
-        navigate("/");
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
+    const payload = {
+      username,
+      password,
+    };
+
+    const response = await RegisterUser(payload);
+
+    if (response.status === 201) {
+      setAuthenticated(response.data);
+      navigate("/home");
+    }
   };
 
   const navigate = useNavigate();
+
+  if(authenticated !== null){
+    navigate("/home")
+  }
 
   return (
     <div>
@@ -53,6 +51,7 @@ export default function Register() {
         />
         <br />
         <button type="submit">Register</button>
+        <Link to="/">Login</Link>
       </form>
     </div>
   );
