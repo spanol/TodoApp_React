@@ -71,7 +71,7 @@ body {
   margin: 0px 0px 0px 50px;
 }
 
-.author {
+.user {
   margin: 0px 50px 0px 0px;
 }
 
@@ -82,18 +82,18 @@ body {
   color: #fff;
 }
 
-.author-image {
+.user-image {
   width: 44px;
   height: 44px;
   margin-right: 10px;
   border-radius: 50%;
 }
 
-.author-name {
+.user-name {
   font-size: 600;
 }
 
-.author-greetings {
+.user-greetings {
   font-size: 11px;
 }
 
@@ -166,7 +166,7 @@ body {
   margin-left: -40px;
 }
 
-.author-message{
+.user-message{
   font-size: 15px;
 }
 
@@ -183,7 +183,7 @@ body {
     margin-left: 20px;
   }
 
-  .author{
+  .user{
     margin-right: 20px;
   }
 }
